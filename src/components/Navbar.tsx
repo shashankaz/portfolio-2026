@@ -4,27 +4,33 @@ const Navbar = ({
   experienceRef,
   projectsRef,
   skillsRef,
-  blogsRef,
 }: {
   heroRef: React.RefObject<HTMLDivElement | null>;
   educationRef: React.RefObject<HTMLDivElement | null>;
   experienceRef: React.RefObject<HTMLDivElement | null>;
   projectsRef: React.RefObject<HTMLDivElement | null>;
   skillsRef: React.RefObject<HTMLDivElement | null>;
-  blogsRef: React.RefObject<HTMLDivElement | null>;
 }) => {
   return (
-    <ul className="flex items-center justify-center gap-4 py-4">
+    <ul className="flex items-center justify-center gap-4 py-4 sticky top-4 z-10 backdrop-blur-sm shadow-md rounded-full mt-4">
       <li
         className="text-sm font-semibold hover:cursor-pointer"
-        onClick={() => heroRef.current?.scrollIntoView({ behavior: "smooth" })}
+        onClick={() =>
+          heroRef.current?.scrollIntoView({
+            behavior: "smooth",
+            block: "center",
+          })
+        }
       >
         Home
       </li>
       <li
         className="text-sm font-semibold hover:cursor-pointer"
         onClick={() =>
-          educationRef.current?.scrollIntoView({ behavior: "smooth" })
+          educationRef.current?.scrollIntoView({
+            behavior: "smooth",
+            block: "center",
+          })
         }
       >
         Education
@@ -32,7 +38,10 @@ const Navbar = ({
       <li
         className="text-sm font-semibold hover:cursor-pointer"
         onClick={() =>
-          experienceRef.current?.scrollIntoView({ behavior: "smooth" })
+          experienceRef.current?.scrollIntoView({
+            behavior: "smooth",
+            block: "center",
+          })
         }
       >
         Experience
@@ -40,7 +49,10 @@ const Navbar = ({
       <li
         className="text-sm font-semibold hover:cursor-pointer"
         onClick={() =>
-          projectsRef.current?.scrollIntoView({ behavior: "smooth" })
+          projectsRef.current?.scrollIntoView({
+            behavior: "smooth",
+            block: "center",
+          })
         }
       >
         Projects
@@ -48,16 +60,13 @@ const Navbar = ({
       <li
         className="text-sm font-semibold hover:cursor-pointer"
         onClick={() =>
-          skillsRef.current?.scrollIntoView({ behavior: "smooth" })
+          skillsRef.current?.scrollIntoView({
+            behavior: "smooth",
+            block: "center",
+          })
         }
       >
         Skills
-      </li>
-      <li
-        className="text-sm font-semibold hover:cursor-pointer"
-        onClick={() => blogsRef.current?.scrollIntoView({ behavior: "smooth" })}
-      >
-        Blogs
       </li>
     </ul>
   );

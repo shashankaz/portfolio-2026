@@ -16,10 +16,9 @@ const Hero = ({ forwardedRef }: HeroProps) => {
           <span>/sha.shank/</span>
         </div>
         <p className="mt-2 text-gray-700">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis
-          eius vitae, sit numquam earum ducimus amet modi aliquam quaerat nulla
-          labore nemo impedit ex minima asperiores. Placeat hic provident
-          itaque.
+          A movie and show binge-watcher who never skips a good playlist.
+          Between music sessions and screen time, I dive into coding adventures
+          that keep me curious, creative, and caffeinated.
         </p>
       </div>
       <div className="w-1/2 sm:w-1/3 aspect-square shadow-md rounded-xl overflow-hidden">

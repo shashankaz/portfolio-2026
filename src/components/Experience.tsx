@@ -43,7 +43,7 @@ const Experience = ({ forwardedRef }: ExperienceProps) => {
       </h1>
 
       <div className="mt-10 space-y-4">
-        {experienceData.map((item, index) => (
+        {experienceData.slice(1).map((item, index) => (
           <div
             key={index}
             className="backdrop-blur-sm shadow-md hover:shadow-lg transition-shadow rounded-xl p-2.5"

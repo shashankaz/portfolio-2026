@@ -16,7 +16,7 @@ const educationData = [
   {
     institute: "St. Karen's High School",
     degree: "10th Grade",
-    year: "2020 - 2015",
+    year: "2015 - 2020",
     logo: "/education/St_Karen's_Logo.png",
   },
 ];
@@ -54,7 +54,9 @@ const Education = ({ forwardedRef }: EducationProps) => {
                 <p className="text-sm">{item.degree}</p>
               </div>
             </div>
-            <span className="text-sm text-gray-500 italic min-w-24 flex justify-end">{item.year}</span>
+            <span className="text-sm text-gray-500 italic min-w-24 flex justify-end">
+              {item.year}
+            </span>
           </div>
         ))}
       </div>

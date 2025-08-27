@@ -17,7 +17,54 @@ export const metadata: Metadata = {
     default: "Shashank's Portfolio",
     template: "%s | Shashank's Portfolio",
   },
-  description: "",
+  description:
+    "Portfolio of Shashank, a Computer Science undergrad at IIIT Ranchi and full-stack developer. Passionate about building scalable web apps, exploring cloud infrastructure, and solving complex problems through code, design, and innovation.",
+
+  keywords: [
+    "Shashank",
+    "Portfolio",
+    "Full Stack Developer",
+    "Web Development",
+    "IIIT Ranchi",
+    "React",
+    "Next.js",
+    "FastAPI",
+    "PostgreSQL",
+    "Cloud",
+  ],
+
+  authors: [{ name: "Shashank", url: "https://github.com/shashankaz" }],
+  creator: "Shashank",
+  publisher: "Shashank",
+
+  metadataBase: new URL("https://byte9x.dev"),
+
+  openGraph: {
+    title: "Shashank's Portfolio",
+    description:
+      "Showcasing projects, experience, and achievements of Shashank — a full-stack developer and CSE undergrad at IIIT Ranchi.",
+    url: "https://byte9x.dev",
+    siteName: "Shashank's Portfolio",
+    images: [
+      {
+        url: "https://byte9x.dev/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Shashank's Portfolio Preview",
+      },
+    ],
+    locale: "en_IN",
+    type: "website",
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title: "Shashank's Portfolio",
+    description:
+      "Full-stack developer & CSE undergrad at IIIT Ranchi. Explore my projects, internships, and achievements.",
+    creator: "@shashankaz",
+    images: ["https://byte9x.dev/og-image.png"],
+  },
 };
 
 export default function RootLayout({
