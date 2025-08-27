@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Link from "next/link";
 
 export const metadata = {
   title: "Page Not Found",
@@ -7,15 +7,19 @@ export const metadata = {
 
 const NotFound = () => {
   return (
-    <div className="h-screen flex items-center justify-center">
-      <Image
-        src="/404.jpg"
-        width={500}
-        height={500}
-        alt="404 Not Found"
-        className="max-w-sm sm:max-w-md md:max-w-2xl lg:max-w-3xl"
-        draggable="false"
-      />
+    <div className="h-screen flex flex-col items-center justify-center gap-6">
+      <h1 className="text-5xl font-semibold uppercase tracking-wide text-neutral-900">
+        Page Not Found
+      </h1>
+      <p className="text-2xl text-neutral-500">
+        We can&apos;t seem to find the page you&apos;re looking for.
+      </p>
+      <Link
+        href="/"
+        className="bg-black text-white px-4 py-2 uppercase font-medium text-sm tracking-wide"
+      >
+        Go to Home Page
+      </Link>
     </div>
   );
 };
