@@ -20,6 +20,20 @@ const Footer = () => {
           />
         </Link>
         <Link
+          href="https://github.com/shashankaz"
+          target="_blank"
+          className="size-10"
+        >
+          <Image
+            src="/social/github.png"
+            height={40}
+            width={40}
+            alt="GitHub"
+            className="h-full w-full"
+            draggable="false"
+          />
+        </Link>
+        <Link
           href="https://www.x.com/shashankaz"
           target="_blank"
           className="size-10"

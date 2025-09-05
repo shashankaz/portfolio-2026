@@ -15,6 +15,27 @@ const projectsData = [
     date: "Nov 2024",
     link: "https://github.com/shashankaz/algomorph",
   },
+  {
+    title: "BrainChick - Online Quiz Application",
+    description:
+      "A full-featured online quiz application using the MERN stack with Firebase Authentication. Features include real-time quiz participation, instant results, global leaderboard, and responsive design for seamless cross-device access.",
+    date: "Aug 2024",
+    link: "https://github.com/shashankaz/BrainChick",
+  },
+  {
+    title: "Pensieve - Full-Stack Blogging Platform",
+    description:
+      "Full-stack blogging platform using the MERN stack with AI-powered content generation via the Gemini API. Features include Firebase auth, rich text editing, image uploads with Cloudinary, and responsive design with Tailwind CSS.",
+    date: "Aug 2024",
+    link: "https://github.com/shashankaz/Pensieve",
+  },
+  {
+    title: "URL Shortener API",
+    description:
+      "A secure URL Shortener API using Node.js, Express, and MongoDB with user authentication, rate limiting, and QR code generation. Features include custom short URLs, click tracking, and cookie-based session management.",
+    date: "Jul 2024",
+    link: "https://github.com/shashankaz/url_shortener_api",
+  },
 ];
 
 interface ProjectsProps {
@@ -40,7 +61,9 @@ const Projects = ({ forwardedRef }: ProjectsProps) => {
               <h2 className="text-lg font-semibold">{item.title}</h2>
               <p className="text-sm">{item.description}</p>
             </div>
-            <div className="text-xl font-bold uppercase">{item.date}</div>
+            <div className="text-xl font-bold uppercase text-right">
+              {item.date}
+            </div>
           </Link>
         ))}
       </div>

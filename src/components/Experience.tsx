@@ -65,7 +65,7 @@ const Experience = ({ forwardedRef }: ExperienceProps) => {
                   <p className="text-sm line-clamp-1">{item.position}</p>
                 </div>
               </div>
-              <span className="text-sm text-gray-500 italic min-w-32 flex justify-end">
+              <span className="text-sm text-gray-500 italic min-w-32 flex justify-end text-right">
                 {item.duration}
               </span>
             </div>

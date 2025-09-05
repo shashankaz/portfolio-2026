@@ -54,7 +54,7 @@ const Education = ({ forwardedRef }: EducationProps) => {
                 <p className="text-sm">{item.degree}</p>
               </div>
             </div>
-            <span className="text-sm text-gray-500 italic min-w-24 flex justify-end">
+            <span className="text-sm text-gray-500 italic min-w-24 flex justify-end text-right">
               {item.year}
             </span>
           </div>
