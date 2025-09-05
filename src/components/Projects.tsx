@@ -9,6 +9,12 @@ const projectsData = [
     link: "https://github.com/shashankaz/contest-tracker",
   },
   {
+    title: "Relix - Interior Design & Home Styling",
+    description: "A modern single-page interior design website built with React 18, TypeScript, Vite, and Tailwind CSS. It features client-side routing, form validation, and code splitting, with full Docker and AWS ECS deployment support.",
+    date: "Feb 2025",
+    link: "https://github.com/shashankaz/relix",
+  },
+  {
     title: "Algomorph - DSA Algorithm Explorer",
     description:
       "An interactive platform to learn, visualize, and run 100+ algorithms across C, C++, Java, Python, and JavaScript. Secured 3rd prize at Appwrite Hacktoberfest Hackathon and adopted by 200+ students.",
