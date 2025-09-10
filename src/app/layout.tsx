@@ -79,7 +79,7 @@ export default function RootLayout({
       >
         <main className="relative">
           {children}
-          <div className="fixed inset-0 h-screen bg-white -z-10 flex items-center justify-center">
+          <div className="fixed inset-0 h-screen bg-white -z-10 hidden items-center justify-center">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               version="1.1"

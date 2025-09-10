@@ -36,7 +36,7 @@ const Education = ({ forwardedRef }: EducationProps) => {
         {educationData.map((item, index) => (
           <div
             key={index}
-            className="flex items-center justify-between gap-4 backdrop-blur-sm shadow-md hover:shadow-lg transition-shadow rounded-xl p-2.5"
+            className="flex items-center justify-between gap-4 hover:bg-neutral-100 border border-black shadow-[3px_3px_#000] hover:scale-105 transition-all rounded-xl p-3"
           >
             <div className="flex items-start gap-2.5">
               <div className="min-w-12 aspect-square rounded-lg">

@@ -12,7 +12,7 @@ const Navbar = ({
   skillsRef: React.RefObject<HTMLDivElement | null>;
 }) => {
   return (
-    <ul className="flex items-center justify-center gap-4 py-4 sticky top-4 z-10 backdrop-blur-sm shadow-md rounded-full mt-4">
+    <ul className="flex items-center justify-center gap-4 py-4 sticky top-4 z-10 backdrop-blur-sm border border-black shadow-[3px_3px_#000] rounded-xl mt-4">
       <li
         className="text-sm font-semibold hover:cursor-pointer"
         onClick={() =>
@@ -51,7 +51,7 @@ const Navbar = ({
         onClick={() =>
           projectsRef.current?.scrollIntoView({
             behavior: "smooth",
-            block: "center",
+            block: "start",
           })
         }
       >
