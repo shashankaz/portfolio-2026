@@ -52,11 +52,11 @@ const Github = async () => {
               </Link>
             </div>
             <p>{repo.description}</p>
-            <div className="flex items-center justify-between mt-2">
+            <div className="flex items-center justify-between mt-2 gap-4">
               <p className="text-sm italic capitalize text-secondary-foreground">
                 {repo.topics.join(", ") || repo.language}
               </p>
-              <p className="text-sm italic text-secondary-foreground">
+              <p className="text-sm italic text-secondary-foreground text-right">
                 Last updated: {formatDistanceToNow(repo.updated_at)}
               </p>
             </div>

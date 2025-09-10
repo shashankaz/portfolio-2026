@@ -8,10 +8,10 @@ export const metadata = {
 const NotFound = () => {
   return (
     <div className="h-screen flex flex-col items-center justify-center gap-6">
-      <h1 className="text-5xl font-semibold uppercase tracking-wide text-neutral-900">
+      <h1 className="text-5xl font-semibold uppercase tracking-wide text-center text-neutral-900">
         Page Not Found
       </h1>
-      <p className="text-2xl text-neutral-500">
+      <p className="text-2xl text-center text-neutral-500">
         We can&apos;t seem to find the page you&apos;re looking for.
       </p>
       <Link
