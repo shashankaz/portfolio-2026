@@ -111,7 +111,7 @@ const Projects = ({ forwardedRef }: ProjectsProps) => {
               </Link>
             </div>
             <p className="text-sm">{item.description}</p>
-            <div className="flex items-center justify-between mt-2 gap-4">
+            <div className="flex flex-col md:flex-row md:items-center justify-between mt-2 gap-4">
               <p className="text-sm italic capitalize text-secondary-foreground">
                 {item.languages.join(", ")}
               </p>

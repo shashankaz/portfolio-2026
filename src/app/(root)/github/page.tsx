@@ -44,7 +44,7 @@ const Github = async () => {
               <Link
                 href={repo.html_url}
                 target="_blank"
-                className="hidden group-hover:block"
+                className="md:hidden md:group-hover:block"
               >
                 <span className="text-sm italic text-secondary-foreground flex items-center gap-1">
                   Visit <ExternalLink className="h-4 w-4" />
@@ -52,7 +52,7 @@ const Github = async () => {
               </Link>
             </div>
             <p>{repo.description}</p>
-            <div className="flex items-center justify-between mt-2 gap-4">
+            <div className="flex flex-col md:flex-row md:items-center justify-between mt-2 gap-4">
               <p className="text-sm italic capitalize text-secondary-foreground">
                 {repo.topics.join(", ") || repo.language}
               </p>

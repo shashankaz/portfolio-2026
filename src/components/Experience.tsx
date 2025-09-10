@@ -2,6 +2,7 @@ import Image from "next/image";
 
 const experienceData = [
   {
+    id: 1,
     company: "UrbanPGM",
     position: "Full Stack Developer Freelance",
     duration: "May 2025 - Present",
@@ -9,6 +10,7 @@ const experienceData = [
     logo: "/experience/urbanpgm.png",
   },
   {
+    id: 2,
     company: "SEORCE",
     position: "Software Developer Intern",
     duration: "May 2025 - Aug 2025",
@@ -16,6 +18,7 @@ const experienceData = [
     logo: "/experience/seorce.png",
   },
   {
+    id: 3,
     company: "Precollege",
     position: "Full Stack Developer Intern",
     duration: "Jan 2025 - May 2025",
@@ -23,6 +26,7 @@ const experienceData = [
     logo: "/experience/precollege.png",
   },
   {
+    id: 4,
     company: "Aquarlabs",
     position: "Full Stack Developer Intern",
     duration: "Oct 2024 - Jan 2025",
@@ -43,9 +47,9 @@ const Experience = ({ forwardedRef }: ExperienceProps) => {
       </h1>
 
       <div className="mt-10 space-y-4">
-        {experienceData.slice(1).map((item, index) => (
+        {experienceData.slice(1).map((item) => (
           <div
-            key={index}
+            key={item.id}
             className="hover:bg-neutral-100 border border-black shadow-[3px_3px_#000] hover:scale-105 transition-all rounded-xl p-3"
           >
             <div className="flex items-center justify-between gap-4">

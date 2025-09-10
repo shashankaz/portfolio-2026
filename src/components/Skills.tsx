@@ -42,11 +42,11 @@ const Skills = ({ forwardedRef }: SkillsProps) => {
       </h1>
 
       <div className="mt-10 grid grid-cols-6 md:grid-cols-8 lg:grid-cols-10 gap-4">
-        {skills.map((skill) => (
+        {skills.map((skill, index) => (
           <>
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              key={skill}
+              key={index}
               src={`https://skillicons.dev/icons?i=${skill}`}
               alt="Skills icons"
             />

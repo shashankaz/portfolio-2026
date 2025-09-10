@@ -2,18 +2,21 @@ import Image from "next/image";
 
 const educationData = [
   {
+    id: 1,
     institute: "Indian Institute of Information Technology Ranchi",
     degree: "Bachelor of Technology in Computer Science and Engineering",
     year: "2022 - Present",
     logo: "/education/Indian_Institute_of_Information_Technology,_Ranchi_Logo.png",
   },
   {
+    id: 2,
     institute: "St. Karen's High School",
     degree: "12th Grade",
     year: "2020 - 2022",
     logo: "/education/St_Karen's_Logo.png",
   },
   {
+    id: 3,
     institute: "St. Karen's High School",
     degree: "10th Grade",
     year: "2015 - 2020",
@@ -33,9 +36,9 @@ const Education = ({ forwardedRef }: EducationProps) => {
       </h1>
 
       <div className="mt-10 space-y-4">
-        {educationData.map((item, index) => (
+        {educationData.map((item) => (
           <div
-            key={index}
+            key={item.id}
             className="flex items-center justify-between gap-4 hover:bg-neutral-100 border border-black shadow-[3px_3px_#000] hover:scale-105 transition-all rounded-xl p-3"
           >
             <div className="flex items-start gap-2.5">
