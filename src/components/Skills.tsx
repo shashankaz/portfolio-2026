@@ -47,7 +47,8 @@ const Skills = ({ forwardedRef }: SkillsProps) => {
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src={`https://skillicons.dev/icons?i=${skill.name}`}
-              alt="Skills icons"
+              alt={skill.name}
+              className="border border-black shadow-[3px_3px_#000] hover:scale-105 transition-all rounded-xl"
             />
           </React.Fragment>
         ))}

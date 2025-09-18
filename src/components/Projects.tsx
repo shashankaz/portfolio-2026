@@ -101,7 +101,7 @@ const Projects = ({ forwardedRef }: ProjectsProps) => {
               <Link
                 href={item.link}
                 target="_blank"
-                className="hidden group-hover:block"
+                className="md:hidden md:group-hover:block"
               >
                 <span className="text-sm italic text-secondary-foreground flex items-center gap-1">
                   Visit <ExternalLink className="h-4 w-4" />
