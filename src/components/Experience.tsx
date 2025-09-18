@@ -42,9 +42,7 @@ interface ExperienceProps {
 const Experience = ({ forwardedRef }: ExperienceProps) => {
   return (
     <div ref={forwardedRef} className="py-10">
-      <h1 className="text-2xl font-semibold border-b border-black pb-2 w-1/2">
-        Experience
-      </h1>
+      <h1 className="text-2xl font-bold text-center pb-2">Experience</h1>
 
       <div className="mt-10 space-y-4">
         {experienceData.slice(1).map((item) => (
@@ -52,7 +50,7 @@ const Experience = ({ forwardedRef }: ExperienceProps) => {
             key={item.id}
             className="hover:bg-neutral-100 border border-black shadow-[3px_3px_#000] hover:scale-105 transition-all rounded-xl p-3"
           >
-            <div className="flex items-center justify-between gap-4">
+            <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
               <div className="flex items-center gap-2.5">
                 <div className="w-12 aspect-square rounded-lg overflow-hidden">
                   <Image

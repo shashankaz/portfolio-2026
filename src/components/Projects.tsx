@@ -88,9 +88,7 @@ interface ProjectsProps {
 const Projects = ({ forwardedRef }: ProjectsProps) => {
   return (
     <div ref={forwardedRef} className="py-10">
-      <h1 className="text-2xl font-semibold border-b border-black pb-2 w-1/2">
-        Projects
-      </h1>
+      <h1 className="text-2xl font-bold text-center pb-2">Projects</h1>
 
       <div className="mt-10 space-y-4">
         {projectsData.map((item, index) => (
