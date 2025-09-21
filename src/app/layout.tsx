@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import { GoogleAnalytics } from "@next/third-parties/google";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -47,7 +48,7 @@ export const metadata: Metadata = {
     siteName: "Shashank's Portfolio",
     images: [
       {
-        url: "https://byte9x.dev/og-image.png",
+        url: "https://byte9x.dev/opengraph-image.png",
         width: 1200,
         height: 630,
         alt: "Shashank's Portfolio Preview",
@@ -63,7 +64,7 @@ export const metadata: Metadata = {
     description:
       "Full-stack developer & CSE undergrad at IIIT Ranchi. Explore my projects, internships, and achievements.",
     creator: "@shashankaz",
-    images: ["https://byte9x.dev/og-image.png"],
+    images: ["https://byte9x.dev/opengraph-image.png"],
   },
 };
 
@@ -114,6 +115,7 @@ export default function RootLayout({
             </svg>
           </div>
         </main>
+        <GoogleAnalytics gaId="G-DC71LPLF7L" />
       </body>
     </html>
   );
