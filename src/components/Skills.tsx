@@ -48,7 +48,7 @@ const Skills = ({ forwardedRef }: SkillsProps) => {
             <img
               src={`https://skillicons.dev/icons?i=${skill.name}`}
               alt={skill.name}
-              className="border border-black shadow-[3px_3px_#000] hover:scale-105 transition-all rounded-xl"
+              className="border border-black bg-black shadow-[3px_3px_#000] hover:scale-105 transition-all rounded-xl"
             />
           </React.Fragment>
         ))}

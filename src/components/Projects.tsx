@@ -103,17 +103,17 @@ const Projects = ({ forwardedRef }: ProjectsProps) => {
                 target="_blank"
                 className="md:hidden md:group-hover:block"
               >
-                <span className="text-sm italic text-secondary-foreground flex items-center gap-1">
+                <span className="text-sm italic text-muted-foreground flex items-center gap-1">
                   Visit <ExternalLink className="h-4 w-4" />
                 </span>
               </Link>
             </div>
             <p className="text-sm">{item.description}</p>
             <div className="flex flex-col md:flex-row md:items-center justify-between mt-2 gap-4">
-              <p className="text-sm italic capitalize text-secondary-foreground">
+              <p className="text-sm italic capitalize text-muted-foreground">
                 {item.languages.join(", ")}
               </p>
-              <p className="text-sm italic text-secondary-foreground text-right">
+              <p className="text-sm italic text-neutral-500 text-right">
                 {item.date}
               </p>
             </div>
