@@ -48,7 +48,7 @@ const Experience = ({ forwardedRef }: ExperienceProps) => {
         {experienceData.slice(1).map((item) => (
           <div
             key={item.id}
-            className="hover:bg-neutral-100 border border-black shadow-[3px_3px_#000] hover:scale-105 transition-all rounded-xl p-3"
+            className="hover:bg-secondary border border-black shadow-[3px_3px_#000] hover:scale-105 transition-all rounded-xl p-3"
           >
             <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
               <div className="flex items-center gap-2.5">

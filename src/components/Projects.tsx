@@ -94,7 +94,7 @@ const Projects = ({ forwardedRef }: ProjectsProps) => {
         {projectsData.map((item, index) => (
           <div
             key={index}
-            className="p-4 hover:bg-neutral-100 border border-black shadow-[3px_3px_#000] hover:scale-105 transition-all rounded-xl group"
+            className="p-4 hover:bg-secondary border border-black shadow-[3px_3px_#000] hover:scale-105 transition-all rounded-xl group"
           >
             <div className="flex items-center justify-between mb-2">
               <h2 className="text-xl font-semibold">{item.title}</h2>

@@ -12,7 +12,7 @@ const Navbar = ({
   skillsRef: React.RefObject<HTMLDivElement | null>;
 }) => {
   return (
-    <ul className="py-6 fixed left-0 right-0 top-0 z-10 backdrop-blur-sm border-b bg-white/60">
+    <ul className="py-6 fixed left-0 right-0 top-0 z-10 backdrop-blur-sm border-b bg-secondary/50">
       <div className="flex items-center justify-center gap-4 max-w-2xl mx-auto px-4">
         <li
           className="text-sm font-semibold hover:cursor-pointer"
