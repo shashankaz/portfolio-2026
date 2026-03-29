@@ -1,8 +1,8 @@
-import Footer from "@/components/Footer";
+import { Footer } from "@/components/footer";
 
-interface RootLayoutProps {
+type RootLayoutProps = {
   children: React.ReactNode;
-}
+};
 
 const RootLayout: React.FC<RootLayoutProps> = ({ children }) => {
   return (

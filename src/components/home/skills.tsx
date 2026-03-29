@@ -32,11 +32,11 @@ const skills = [
   { id: 29, name: "bash" },
 ];
 
-interface SkillsProps {
+type SkillsProps = {
   forwardedRef: React.Ref<HTMLDivElement>;
-}
+};
 
-const Skills = ({ forwardedRef }: SkillsProps) => {
+export const Skills: React.FC<SkillsProps> = ({ forwardedRef }) => {
   return (
     <div ref={forwardedRef} className="py-10">
       <h1 className="text-2xl font-bold text-center pb-2">Skills</h1>
@@ -56,5 +56,3 @@ const Skills = ({ forwardedRef }: SkillsProps) => {
     </div>
   );
 };
-
-export default Skills;

@@ -2,12 +2,12 @@
 
 import { useRef } from "react";
 
-import Hero from "@/components/Hero";
-import Experience from "@/components/Experience";
-import Projects from "@/components/Projects";
-import Education from "@/components/Education";
-import Skills from "@/components/Skills";
-import Navbar from "@/components/Navbar";
+import { Hero } from "@/components/home/hero";
+import { Experience } from "@/components/home/experience";
+import { Projects } from "@/components/home/projects";
+import { Education } from "@/components/home/education";
+import { Skills } from "@/components/home/skills";
+import { Navbar } from "@/components/home/navbar";
 
 const Home = () => {
   const heroRef = useRef<HTMLDivElement>(null);

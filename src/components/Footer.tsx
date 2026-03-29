@@ -3,7 +3,7 @@ import { FaLinkedinIn, FaGithub, FaInstagram } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { IoMailOutline } from "react-icons/io5";
 
-const Footer = () => {
+export const Footer = () => {
   const MAIL = "shashankstories@gmail.com";
 
   return (
@@ -30,5 +30,3 @@ const Footer = () => {
     </div>
   );
 };
-
-export default Footer;

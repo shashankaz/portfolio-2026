@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   description: "Explore my GitHub repositories and projects.",
 };
 
-interface GitHub {
+interface IGitHub {
   id: number;
   name: string;
   html_url: string;
@@ -21,7 +21,7 @@ interface GitHub {
 }
 
 const Github = async () => {
-  const repos: GitHub[] = await fetchGithubProfile();
+  const repos: IGitHub[] = await fetchGithubProfile();
 
   repos.sort((a, b) => {
     return new Date(b.updated_at).getTime() - new Date(a.updated_at).getTime();

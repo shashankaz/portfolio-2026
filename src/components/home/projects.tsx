@@ -3,6 +3,22 @@ import Link from "next/link";
 
 const projectsData = [
   {
+    title: "Spark CRM – Multi-Tenant CRM Platform",
+    description:
+      "A production-grade multi-tenant CRM with RBAC, workflow automation, AI-powered lead research, and email tracking. Built scalable async architecture with Redis caching and AWS (SQS, S3), enabling high-performance APIs and secure tenant isolation.",
+    languages: [
+      "Node.js",
+      "Express",
+      "MongoDB",
+      "Redis",
+      "AWS",
+      "JWT",
+      "TypeScript",
+    ],
+    date: "Feb 2026",
+    link: "https://github.com/shashankaz/spark-crm",
+  },
+  {
     title: "Contest Tracker Hub",
     description:
       "A real-time hub aggregating contests from LeetCode, Codeforces, CodeChef, AtCoder, and GeeksforGeeks. Features filtering, bookmarking, personalization, email alerts, and automated reminders — cutting manual tracking effort by 80%.",
@@ -81,11 +97,11 @@ const projectsData = [
   },
 ];
 
-interface ProjectsProps {
+type ProjectsProps = {
   forwardedRef: React.Ref<HTMLDivElement>;
-}
+};
 
-const Projects = ({ forwardedRef }: ProjectsProps) => {
+export const Projects: React.FC<ProjectsProps> = ({ forwardedRef }) => {
   return (
     <div ref={forwardedRef} className="py-10">
       <h1 className="text-2xl font-bold text-center pb-2">Projects</h1>
@@ -123,5 +139,3 @@ const Projects = ({ forwardedRef }: ProjectsProps) => {
     </div>
   );
 };
-
-export default Projects;

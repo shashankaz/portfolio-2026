@@ -1,10 +1,10 @@
 import Image from "next/image";
 
-interface HeroProps {
+type HeroProps = {
   forwardedRef: React.Ref<HTMLDivElement>;
-}
+};
 
-const Hero = ({ forwardedRef }: HeroProps) => {
+export const Hero: React.FC<HeroProps> = ({ forwardedRef }) => {
   return (
     <div
       ref={forwardedRef}
@@ -34,5 +34,3 @@ const Hero = ({ forwardedRef }: HeroProps) => {
     </div>
   );
 };
-
-export default Hero;

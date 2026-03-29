@@ -24,11 +24,11 @@ const educationData = [
   },
 ];
 
-interface EducationProps {
+type EducationProps = {
   forwardedRef: React.Ref<HTMLDivElement>;
-}
+};
 
-const Education = ({ forwardedRef }: EducationProps) => {
+export const Education: React.FC<EducationProps> = ({ forwardedRef }) => {
   return (
     <div ref={forwardedRef} className="py-10">
       <h1 className="text-2xl font-bold text-center pb-2">Education</h1>
@@ -64,5 +64,3 @@ const Education = ({ forwardedRef }: EducationProps) => {
     </div>
   );
 };
-
-export default Education;

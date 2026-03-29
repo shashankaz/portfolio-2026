@@ -1,15 +1,17 @@
-const Navbar = ({
-  heroRef,
-  educationRef,
-  experienceRef,
-  projectsRef,
-  skillsRef,
-}: {
+type NavbarProps = {
   heroRef: React.RefObject<HTMLDivElement | null>;
   educationRef: React.RefObject<HTMLDivElement | null>;
   experienceRef: React.RefObject<HTMLDivElement | null>;
   projectsRef: React.RefObject<HTMLDivElement | null>;
   skillsRef: React.RefObject<HTMLDivElement | null>;
+};
+
+export const Navbar: React.FC<NavbarProps> = ({
+  heroRef,
+  educationRef,
+  experienceRef,
+  projectsRef,
+  skillsRef,
 }) => {
   return (
     <ul className="py-6 fixed left-0 right-0 top-0 z-10 backdrop-blur-sm border-b bg-secondary/50">
@@ -73,5 +75,3 @@ const Navbar = ({
     </ul>
   );
 };
-
-export default Navbar;
