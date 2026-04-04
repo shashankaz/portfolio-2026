@@ -46,7 +46,7 @@ export const Education: React.FC<EducationProps> = ({ forwardedRef }) => {
                   height={48}
                   width={48}
                   alt={`${item.institute} logo`}
-                  className="object-contain h-full w-full"
+                  className="object-contain h-full w-full select-none"
                   draggable="false"
                 />
               </div>

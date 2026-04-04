@@ -90,7 +90,7 @@ export const Experience: React.FC<ExperienceProps> = ({ forwardedRef }) => {
                   height={48}
                   width={48}
                   alt={`${item.company} logo`}
-                  className="object-contain h-full w-full"
+                  className="object-contain h-full w-full select-none"
                   draggable="false"
                 />
               </div>

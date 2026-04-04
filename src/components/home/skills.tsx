@@ -37,6 +37,10 @@ type SkillsProps = {
 };
 
 export const Skills: React.FC<SkillsProps> = ({ forwardedRef }) => {
+  const formattedName = (name: string) => {
+    return name.charAt(0).toUpperCase() + name.slice(1);
+  };
+
   return (
     <div ref={forwardedRef} className="py-10">
       <h1 className="text-2xl font-bold text-center pb-2">Skills</h1>
@@ -47,8 +51,9 @@ export const Skills: React.FC<SkillsProps> = ({ forwardedRef }) => {
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src={`https://skillicons.dev/icons?i=${skill.name}`}
-              alt={skill.name}
-              className="border border-black bg-black shadow-[3px_3px_#000] hover:scale-105 transition-all rounded-xl"
+              alt={formattedName(skill.name)}
+              title={formattedName(skill.name)}
+              className="border border-black bg-black shadow-[3px_3px_#000] hover:scale-105 transition-all rounded-xl select-none"
             />
           </React.Fragment>
         ))}

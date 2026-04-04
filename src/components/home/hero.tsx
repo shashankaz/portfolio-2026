@@ -27,7 +27,7 @@ export const Hero: React.FC<HeroProps> = ({ forwardedRef }) => {
           width={500}
           height={500}
           alt="Profile"
-          className="h-full w-full object-cover"
+          className="h-full w-full object-cover select-none"
           draggable="false"
         />
       </div>
