@@ -18,8 +18,8 @@ const experienceData = [
     id: 2,
     company: "UrbanPGM",
     position: "Full Stack Developer",
-    type: "Freelance",
-    location: "Remote",
+    type: "Internship",
+    location: "Hybrid",
     duration: "May 2025 - Present",
     responsibilities: [
       "Building full-stack web applications with modern stacks (React, Node.js, PostgreSQL) focusing on performance and scalability.",
