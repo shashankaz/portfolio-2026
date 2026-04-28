@@ -7,7 +7,9 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "depcheck": "npx depcheck"
+    "depcheck": "npx depcheck",
+    "format": "prettier --write \"src/**/*.{js,ts,jsx,tsx}\"",
+    "format:check": "prettier --check \"src/**/*.{js,ts,jsx,tsx}\""
   },
   "dependencies": {
     "@next/third-parties": "^15.5.3",
@@ -63,12 +65,15 @@
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
+    "@ianvs/prettier-plugin-sort-imports": "^4.7.1",
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "15.4.2",
+    "prettier": "3.8.3",
+    "prettier-plugin-tailwindcss": "^0.8.0",
     "tailwindcss": "^4",
     "tw-animate-css": "^1.3.5",
     "typescript": "^5"
