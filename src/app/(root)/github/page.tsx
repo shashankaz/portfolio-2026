@@ -1,27 +1,17 @@
-import { Metadata } from "next";
-import Link from "next/link";
 import { formatDistanceToNow } from "date-fns";
 import { ExternalLink } from "lucide-react";
+import type { Metadata } from "next";
+import Link from "next/link";
 
-import { fetchGithubProfile } from "./actions";
+import { fetchGithubRepos, type GitHubRepo } from "@/lib/github";
 
 export const metadata: Metadata = {
   title: "Github",
   description: "Explore my GitHub repositories and projects.",
 };
 
-interface IGitHub {
-  id: number;
-  name: string;
-  html_url: string;
-  description: string;
-  topics: string[];
-  language: string;
-  updated_at: string;
-}
-
 const Github = async () => {
-  const repos: IGitHub[] = await fetchGithubProfile();
+  const repos: GitHubRepo[] = await fetchGithubRepos();
 
   repos.sort((a, b) => {
     return new Date(b.updated_at).getTime() - new Date(a.updated_at).getTime();
@@ -35,28 +25,34 @@ const Github = async () => {
         {repos.map((repo) => (
           <div
             key={repo.id}
-            className="p-5 hover:bg-secondary border border-black shadow-[3px_3px_#000] hover:scale-105 transition-all rounded-xl group"
+            className="group hover:bg-secondary rounded-xl border border-black p-5 shadow-[3px_3px_#000] transition-all hover:scale-105"
           >
-            <div className="flex items-center justify-between mb-2">
-              <h2 className="text-xl capitalize font-semibold">
-                {repo.name.split("-").join(" ")}
+            <div className="mb-2 flex items-center justify-between">
+              <h2 className="text-xl font-semibold capitalize">
+                {repo.name
+                  .split("-")
+                  .join(" ")
+                  .split("_")
+                  .join(" ")
+                  .split(".")
+                  .join(" ")}
               </h2>
               <Link
                 href={repo.html_url}
                 target="_blank"
                 className="md:hidden md:group-hover:block"
               >
-                <span className="text-sm italic text-secondary-foreground flex items-center gap-1">
+                <span className="text-secondary-foreground flex items-center gap-1 text-sm italic">
                   Visit <ExternalLink className="h-4 w-4" />
                 </span>
               </Link>
             </div>
-            <p>{repo.description}</p>
-            <div className="flex flex-col md:flex-row md:items-center justify-between mt-2 gap-4">
-              <p className="text-sm italic capitalize text-secondary-foreground">
-                {repo.topics.join(", ") || repo.language}
+            <p>{repo.description ?? "No description added yet."}</p>
+            <div className="mt-2 flex flex-col justify-between gap-4 md:flex-row md:items-center">
+              <p className="text-secondary-foreground text-sm capitalize italic">
+                {repo.topics.join(", ") || repo.language || "Unspecified"}
               </p>
-              <p className="text-sm italic text-secondary-foreground text-right">
+              <p className="text-secondary-foreground text-right text-sm italic">
                 Last updated: {formatDistanceToNow(repo.updated_at)}
               </p>
             </div>

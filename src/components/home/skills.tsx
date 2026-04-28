@@ -43,9 +43,9 @@ export const Skills: React.FC<SkillsProps> = ({ forwardedRef }) => {
 
   return (
     <div ref={forwardedRef} className="py-10">
-      <h1 className="text-2xl font-bold text-center pb-2">Skills</h1>
+      <h1 className="pb-2 text-center text-2xl font-bold">Skills</h1>
 
-      <div className="mt-10 grid grid-cols-6 md:grid-cols-8 lg:grid-cols-10 gap-4">
+      <div className="mt-10 grid grid-cols-6 gap-4 md:grid-cols-8 lg:grid-cols-10">
         {skills.map((skill) => (
           <React.Fragment key={skill.id}>
             {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -53,7 +53,7 @@ export const Skills: React.FC<SkillsProps> = ({ forwardedRef }) => {
               src={`https://skillicons.dev/icons?i=${skill.name}`}
               alt={formattedName(skill.name)}
               title={formattedName(skill.name)}
-              className="border border-black bg-black shadow-[3px_3px_#000] hover:scale-105 transition-all rounded-xl select-none"
+              className="rounded-xl border border-black bg-black shadow-[3px_3px_#000] transition-all select-none hover:scale-105"
             />
           </React.Fragment>
         ))}

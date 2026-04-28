@@ -8,20 +8,20 @@ export const Hero: React.FC<HeroProps> = ({ forwardedRef }) => {
   return (
     <div
       ref={forwardedRef}
-      className="py-10 flex items-center flex-col-reverse justify-between gap-4 mt-14"
+      className="mt-14 flex flex-col-reverse items-center justify-between gap-4 py-10"
     >
       <div className="w-full sm:w-2/3">
-        <div className="flex flex-col text-center gap-2">
+        <div className="flex flex-col gap-2 text-center">
           <h1 className="text-4xl font-bold">Hey, I&apos;m Shashank</h1>
           <span>/sha.shank/</span>
         </div>
-        <p className="mt-2 text-center text-muted-foreground">
+        <p className="text-muted-foreground mt-2 text-center">
           A movie and show binge-watcher who never skips a good playlist.
           Between music sessions and screen time, I dive into coding adventures
           that keep me curious, creative, and caffeinated.
         </p>
       </div>
-      <div className="w-1/2 sm:w-1/3 aspect-square shadow-md rounded-full overflow-hidden">
+      <div className="aspect-square w-1/2 overflow-hidden rounded-full shadow-md sm:w-1/3">
         <Image
           src="/placeholder.jpeg"
           width={500}

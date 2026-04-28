@@ -6,7 +6,7 @@ type RootLayoutProps = {
 
 const RootLayout: React.FC<RootLayoutProps> = ({ children }) => {
   return (
-    <div className="max-w-2xl mx-auto px-4">
+    <div className="mx-auto max-w-2xl px-4">
       {children}
       <Footer />
     </div>

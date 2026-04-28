@@ -1,8 +1,8 @@
-import type { Metadata } from "next";
-import { Nunito } from "next/font/google";
-import { PT_Sans } from "next/font/google";
-import "./globals.css";
 import { GoogleAnalytics } from "@next/third-parties/google";
+import type { Metadata } from "next";
+import { Nunito, PT_Sans } from "next/font/google";
+
+import "./globals.css";
 
 const nunito = Nunito({
   variable: "--font-nunito",
@@ -45,7 +45,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Shashank's Portfolio",
     description:
-      "Showcasing projects, experience, and achievements of Shashank — a full-stack developer and CSE undergrad at IIIT Ranchi.",
+      "Showcasing projects, experience, and achievements of Shashank - a full-stack developer and CSE undergrad at IIIT Ranchi.",
     url: "https://byte9x.dev",
     siteName: "Shashank's Portfolio",
     images: [
@@ -83,7 +83,7 @@ export default function RootLayout({
       >
         <main className="relative">
           {children}
-          <div className="fixed inset-0 h-screen bg-white -z-10 hidden items-center justify-center">
+          <div className="fixed inset-0 -z-10 hidden h-screen items-center justify-center bg-white">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               version="1.1"
