@@ -2,7 +2,8 @@ import { ExternalLink } from "lucide-react";
 import Link from "next/link";
 import { FaCode, FaGithub, FaStar } from "react-icons/fa";
 
-import { GITHUB_USERNAME, type GitHubRepo } from "@/lib/github";
+import { USERNAME } from "@/lib/constants";
+import type { GitHubRepo } from "@/lib/github";
 
 type GitHubSectionProps = {
   forwardedRef: React.Ref<HTMLDivElement>;
@@ -70,7 +71,7 @@ export const GitHubSection: React.FC<GitHubSectionProps> = ({
               </p>
             </div>
             <Link
-              href={`https://github.com/${GITHUB_USERNAME}`}
+              href={`https://github.com/${USERNAME}`}
               target="_blank"
               className="inline-flex items-center gap-1 text-sm underline underline-offset-4"
             >
@@ -79,14 +80,14 @@ export const GitHubSection: React.FC<GitHubSectionProps> = ({
           </div>
 
           <Link
-            href={`https://github.com/${GITHUB_USERNAME}`}
+            href={`https://github.com/${USERNAME}`}
             target="_blank"
             className="mt-4 block overflow-hidden rounded-xl bg-white p-2.5"
           >
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src={`https://ghchart.rshah.org/7c5c2b/${GITHUB_USERNAME}`}
-              alt={`${GITHUB_USERNAME} GitHub contribution heatmap`}
+              src={`https://ghchart.rshah.org/7c5c2b/${USERNAME}`}
+              alt={`${USERNAME} GitHub contribution heatmap`}
               className="w-full"
               loading="lazy"
             />
