@@ -7,35 +7,7 @@ const COOKIE_EXPIRY_DAYS = 1;
 
 const QUOTES = [
   {
-    text: "The best error message is the one that never shows up.",
-    author: "Anonymous",
-  },
-  {
-    text: "First, solve the problem. Then, write the code.",
-    author: "Anonymous",
-  },
-  {
-    text: "Any fool can write code that a computer can understand. Good programmers write code that humans can understand.",
-    author: "Anonymous",
-  },
-  {
-    text: "Experience is the name everyone gives to their mistakes.",
-    author: "Anonymous",
-  },
-  {
-    text: "It's not a bug — it's an undocumented feature.",
-    author: "Anonymous",
-  },
-  {
-    text: "Simplicity is the soul of efficiency.",
-    author: "Anonymous",
-  },
-  {
-    text: "Code is like humor. When you have to explain it, it's bad.",
-    author: "Anonymous",
-  },
-  {
-    text: "Programming isn't about what you know; it's about what you can figure out.",
+    text: "If you want a thing done well, do it yourself.",
     author: "Anonymous",
   },
 ];
