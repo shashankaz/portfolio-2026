@@ -38,7 +38,7 @@ export const GitHubSection: React.FC<GitHubSectionProps> = ({
       <h1 className="pb-2 text-center text-2xl font-bold">GitHub</h1>
 
       <div className="mt-10 space-y-4">
-        <div className="grid gap-4 md:grid-cols-3">
+        <div className="grid grid-cols-2 gap-4 md:grid-cols-3">
           <div className="bg-secondary/60 hover:bg-secondary rounded-xl border border-black p-3 shadow-[3px_3px_#000] transition-all hover:scale-105">
             <div className="text-muted-foreground flex items-center gap-2 text-sm">
               <FaGithub className="size-4" />
@@ -53,7 +53,7 @@ export const GitHubSection: React.FC<GitHubSectionProps> = ({
             </div>
             <p className="mt-3 text-2xl font-bold">{totalStars}</p>
           </div>
-          <div className="bg-secondary/60 hover:bg-secondary rounded-xl border border-black p-3 shadow-[3px_3px_#000] transition-all hover:scale-105">
+          <div className="bg-secondary/60 hover:bg-secondary col-span-2 rounded-xl border border-black p-3 shadow-[3px_3px_#000] transition-all hover:scale-105 md:col-span-1">
             <div className="text-muted-foreground flex items-center gap-2 text-sm">
               <FaCode className="size-4" />
               Top language
@@ -73,7 +73,7 @@ export const GitHubSection: React.FC<GitHubSectionProps> = ({
             <Link
               href={`https://github.com/${USERNAME}`}
               target="_blank"
-              className="inline-flex items-center gap-1 text-sm underline underline-offset-4"
+              className="hidden items-center gap-1 text-sm underline underline-offset-4 sm:inline-flex"
             >
               Open profile <ExternalLink className="size-4" />
             </Link>
