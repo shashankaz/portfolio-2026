@@ -1,36 +1,6 @@
 import React from "react";
 
-const skills = [
-  { id: 1, name: "html" },
-  { id: 2, name: "css" },
-  { id: 3, name: "js" },
-  { id: 4, name: "ts" },
-  { id: 5, name: "react" },
-  { id: 6, name: "nextjs" },
-  { id: 7, name: "redux" },
-  { id: 8, name: "tailwind" },
-  { id: 9, name: "bootstrap" },
-  { id: 10, name: "vite" },
-  { id: 11, name: "nodejs" },
-  { id: 12, name: "express" },
-  { id: 13, name: "django" },
-  { id: 14, name: "fastapi" },
-  { id: 15, name: "mongodb" },
-  { id: 16, name: "postgres" },
-  { id: 17, name: "prisma" },
-  { id: 18, name: "redis" },
-  { id: 19, name: "firebase" },
-  { id: 20, name: "docker" },
-  { id: 21, name: "aws" },
-  { id: 22, name: "git" },
-  { id: 23, name: "github" },
-  { id: 24, name: "githubactions" },
-  { id: 25, name: "postman" },
-  { id: 26, name: "cpp" },
-  { id: 27, name: "py" },
-  { id: 28, name: "linux" },
-  { id: 29, name: "bash" },
-];
+import { SKILL_ICON_NAMES } from "@/lib/constants";
 
 type SkillsProps = {
   forwardedRef: React.Ref<HTMLDivElement>;
@@ -46,13 +16,13 @@ export const Skills: React.FC<SkillsProps> = ({ forwardedRef }) => {
       <h1 className="pb-2 text-center text-2xl font-bold">Skills</h1>
 
       <div className="mt-10 grid grid-cols-6 gap-4 md:grid-cols-8 lg:grid-cols-10">
-        {skills.map((skill) => (
-          <React.Fragment key={skill.id}>
+        {SKILL_ICON_NAMES.map((skillName) => (
+          <React.Fragment key={skillName}>
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src={`https://skillicons.dev/icons?i=${skill.name}`}
-              alt={formattedName(skill.name)}
-              title={formattedName(skill.name)}
+              src={`https://skillicons.dev/icons?i=${skillName}`}
+              alt={formattedName(skillName)}
+              title={formattedName(skillName)}
               className="rounded-xl border border-black bg-black shadow-[3px_3px_#000] transition-all select-none hover:scale-105"
             />
           </React.Fragment>

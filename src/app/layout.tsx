@@ -2,6 +2,8 @@ import { GoogleAnalytics } from "@next/third-parties/google";
 import type { Metadata } from "next";
 import { Nunito, PT_Sans } from "next/font/google";
 
+import { GA_ID, PERSON_NAME, TWITTER_HANDLE, USERNAME } from "@/lib/constants";
+
 import "./globals.css";
 
 const nunito = Nunito({
@@ -36,9 +38,9 @@ export const metadata: Metadata = {
     "Cloud",
   ],
 
-  authors: [{ name: "Shashank", url: "https://github.com/shashankaz" }],
-  creator: "Shashank",
-  publisher: "Shashank",
+  authors: [{ name: PERSON_NAME, url: `https://github.com/${USERNAME}` }],
+  creator: PERSON_NAME,
+  publisher: PERSON_NAME,
 
   metadataBase: new URL("https://byte9x.dev"),
 
@@ -65,7 +67,7 @@ export const metadata: Metadata = {
     title: "Shashank's Portfolio",
     description:
       "Full-stack developer & CSE undergrad at IIIT Ranchi. Explore my projects, internships, and achievements.",
-    creator: "@shashankaz",
+    creator: TWITTER_HANDLE,
     images: ["https://byte9x.dev/opengraph-image.png"],
   },
 };
@@ -117,7 +119,7 @@ export default function RootLayout({
             </svg>
           </div>
         </main>
-        <GoogleAnalytics gaId="G-DC71LPLF7L" />
+        <GoogleAnalytics gaId={GA_ID} />
       </body>
     </html>
   );

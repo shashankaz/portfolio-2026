@@ -1,4 +1,4 @@
-export const GITHUB_USERNAME = "shashankaz";
+import { USERNAME } from "@/lib/constants";
 
 export interface GitHubRepo {
   id: number;
@@ -14,7 +14,7 @@ export interface GitHubRepo {
 
 export const fetchGithubRepos = async (): Promise<GitHubRepo[]> => {
   const res = await fetch(
-    `https://api.github.com/users/${GITHUB_USERNAME}/repos?per_page=100&sort=updated`,
+    `https://api.github.com/users/${USERNAME}/repos?per_page=100&sort=updated`,
     {
       next: { revalidate: 60 },
     },
