@@ -3,6 +3,19 @@ import Image from "next/image";
 const experienceData = [
   {
     id: 1,
+    company: "Stealth Startup",
+    position: "Software Engineer",
+    type: "Apprenticeship",
+    location: "Hybrid",
+    duration: "May 2025 - Present",
+    responsibilities: [
+      "Building full-stack web applications with modern stacks (React, Node.js, PostgreSQL) focusing on performance and scalability.",
+      "Designing end-to-end features including APIs, database schemas, and responsive UIs for real-world client use cases.",
+    ],
+    logo: "/experience/stealthstartup.png",
+  },
+  {
+    id: 2,
     company: "Restroworks",
     position: "Member Engineering Intern",
     type: "Internship",
@@ -15,22 +28,9 @@ const experienceData = [
     logo: "/experience/restroworks.png",
   },
   {
-    id: 2,
-    company: "UrbanPGM",
-    position: "Full Stack Developer",
-    type: "Internship",
-    location: "Hybrid",
-    duration: "May 2025 - Present",
-    responsibilities: [
-      "Building full-stack web applications with modern stacks (React, Node.js, PostgreSQL) focusing on performance and scalability.",
-      "Designing end-to-end features including APIs, database schemas, and responsive UIs for real-world client use cases.",
-    ],
-    logo: "/experience/urbanpgm.png",
-  },
-  {
     id: 3,
     company: "SEORCE",
-    position: "Software Developer Intern",
+    position: "Software Developer",
     type: "Internship",
     location: "Remote",
     duration: "May 2025 - Aug 2025 · 4 mos",
@@ -43,7 +43,7 @@ const experienceData = [
   {
     id: 4,
     company: "Precollege",
-    position: "Full Stack Developer Intern",
+    position: "Full Stack Developer",
     type: "Internship",
     location: "Remote",
     duration: "Jan 2025 - May 2025 · 5 mos",
@@ -55,8 +55,8 @@ const experienceData = [
   },
   {
     id: 5,
-    company: "Aquarlabs",
-    position: "Full Stack Developer Intern",
+    company: "AquarLabs",
+    position: "Full Stack Developer",
     type: "Internship",
     location: "Remote",
     duration: "Oct 2024 - Jan 2025 · 4 mos",
