@@ -2,6 +2,8 @@ import { GoogleAnalytics } from "@next/third-parties/google";
 import type { Metadata } from "next";
 import { Nunito, PT_Sans } from "next/font/google";
 
+import { LoadingScreen } from "@/components/loading-screen";
+
 import { GA_ID, PERSON_NAME, TWITTER_HANDLE, USERNAME } from "@/lib/constants";
 
 import "./globals.css";
@@ -83,6 +85,7 @@ export default function RootLayout({
         className={`${nunito.variable} ${ptSans.variable} antialiased`}
         suppressHydrationWarning
       >
+        <LoadingScreen />
         <main className="relative">
           {children}
           <div className="fixed inset-0 -z-10 hidden h-screen items-center justify-center bg-white">
