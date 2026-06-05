@@ -15,27 +15,23 @@ export const Education: React.FC<EducationProps> = ({ forwardedRef }) => {
         {educationData.map((item) => (
           <div
             key={item.id}
-            className="hover:bg-secondary flex flex-col justify-between gap-4 rounded-xl border border-black p-3 shadow-[3px_3px_#000] transition-all hover:scale-105 md:flex-row md:items-center"
+            className="hover:bg-secondary flex items-start gap-3 rounded-xl border border-black p-3 shadow-[3px_3px_#000] transition-all hover:scale-105"
           >
-            <div className="flex items-start gap-2.5">
-              <div className="aspect-square min-w-12 rounded-lg">
-                <Image
-                  src={item.logo}
-                  height={48}
-                  width={48}
-                  alt={`${item.institute} logo`}
-                  className="h-full w-full object-contain select-none"
-                  draggable="false"
-                />
-              </div>
-              <div>
-                <h2 className="font-semibold">{item.institute}</h2>
-                <p className="text-sm">{item.degree}</p>
-              </div>
+            <div className="aspect-square min-w-12 shrink-0 rounded-lg">
+              <Image
+                src={item.logo}
+                height={48}
+                width={48}
+                alt={`${item.institute} logo`}
+                className="h-full w-full object-contain select-none"
+                draggable="false"
+              />
             </div>
-            <span className="flex min-w-24 justify-end text-right text-sm text-neutral-500 italic">
-              {item.year}
-            </span>
+            <div className="min-w-0">
+              <h2 className="leading-snug font-semibold">{item.institute}</h2>
+              <p className="text-sm">{item.degree}</p>
+              <p className="mt-0.5 text-xs text-neutral-500">{item.year}</p>
+            </div>
           </div>
         ))}
       </div>
