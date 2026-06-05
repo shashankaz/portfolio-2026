@@ -1,7 +1,9 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Blend, Menu, X } from "lucide-react";
+
+import { cn } from "@/lib/utils";
 
 type NavbarProps = {
   heroRef: React.RefObject<HTMLDivElement | null>;
@@ -31,6 +33,13 @@ export const Navbar: React.FC<NavbarProps> = ({
 }) => {
   const [isOpen, setIsOpen] = useState(false);
 
+  useEffect(() => {
+    document.body.style.overflow = isOpen ? "hidden" : "";
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [isOpen]);
+
   const refs = {
     heroRef,
     educationRef,
@@ -41,8 +50,7 @@ export const Navbar: React.FC<NavbarProps> = ({
   };
 
   const handleScroll = (refKey: keyof typeof refs) => {
-    const ref = refs[refKey as keyof typeof refs];
-    ref.current?.scrollIntoView({
+    refs[refKey].current?.scrollIntoView({
       behavior: "smooth",
       block:
         refKey === "projectsRef" || refKey === "githubRef" ? "start" : "center",
@@ -51,47 +59,61 @@ export const Navbar: React.FC<NavbarProps> = ({
   };
 
   return (
-    <nav className="bg-secondary/50 fixed top-0 right-0 left-0 z-50 border-b backdrop-blur-sm">
-      <div className="mx-auto max-w-2xl px-4">
-        <div className="hidden items-center justify-center gap-8 py-6 md:flex">
+    <>
+      <div
+        className={cn(
+          "bg-background fixed inset-0 z-40 transition-all duration-300 ease-in-out md:hidden",
+          isOpen
+            ? "pointer-events-auto opacity-100"
+            : "pointer-events-none opacity-0",
+        )}
+      >
+        <div className="flex flex-col gap-1 px-3 pt-20">
           {navItems.map((item) => (
             <button
               key={item.label}
-              className="hover:text-foreground/70 text-sm font-semibold transition-colors"
               onClick={() => handleScroll(item.ref as keyof typeof refs)}
+              className="hover:bg-secondary flex w-full items-center rounded-xl px-4 py-4 text-left text-base font-medium transition-colors"
             >
               {item.label}
             </button>
           ))}
         </div>
+      </div>
 
-        <div className="flex items-center justify-between py-4 md:hidden">
-          <Blend size={24} />
-          <button
-            onClick={() => setIsOpen(!isOpen)}
-            className="hover:bg-secondary rounded-md p-2 transition-colors"
-            aria-label="Toggle menu"
-          >
-            {isOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
+      <nav className="fixed top-0 right-0 left-0 z-50">
+        <div className="bg-secondary/50 hidden border-b backdrop-blur-sm md:block">
+          <div className="mx-auto flex max-w-2xl items-center justify-center gap-8 px-4 py-5">
+            {navItems.map((item) => (
+              <button
+                key={item.label}
+                className="hover:text-foreground/70 text-sm font-semibold transition-colors"
+                onClick={() => handleScroll(item.ref as keyof typeof refs)}
+              >
+                {item.label}
+              </button>
+            ))}
+          </div>
         </div>
 
-        {isOpen && (
-          <div className="animate-in fade-in slide-in-from-top-2 pb-4 duration-200 md:hidden">
-            <div className="flex flex-col gap-2">
-              {navItems.map((item) => (
-                <button
-                  key={item.label}
-                  className="hover:bg-secondary w-full rounded-md px-4 py-3 text-left text-sm font-semibold transition-colors"
-                  onClick={() => handleScroll(item.ref as keyof typeof refs)}
-                >
-                  {item.label}
-                </button>
-              ))}
-            </div>
-          </div>
-        )}
-      </div>
-    </nav>
+        <div
+          className={cn(
+            "flex items-center justify-between px-4 py-3 transition-colors duration-200 md:hidden",
+            isOpen
+              ? "bg-background"
+              : "bg-background/80 border-b backdrop-blur-md",
+          )}
+        >
+          <Blend size={22} />
+          <button
+            onClick={() => setIsOpen(!isOpen)}
+            className="hover:bg-secondary rounded-md p-1.5 transition-colors"
+            aria-label="Toggle menu"
+          >
+            {isOpen ? <X size={22} /> : <Menu size={22} />}
+          </button>
+        </div>
+      </nav>
+    </>
   );
 };
