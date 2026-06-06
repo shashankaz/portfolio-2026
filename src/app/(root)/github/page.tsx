@@ -1,4 +1,4 @@
-import { formatDistanceToNow } from "date-fns";
+import { compareDesc, formatDistanceToNow } from "date-fns";
 import { ExternalLink } from "lucide-react";
 import type { Metadata } from "next";
 import Link from "next/link";
@@ -13,9 +13,9 @@ export const metadata: Metadata = {
 const Github = async () => {
   const repos: GitHubRepo[] = await fetchGithubRepos();
 
-  repos.sort((a, b) => {
-    return new Date(b.updated_at).getTime() - new Date(a.updated_at).getTime();
-  });
+  repos.sort((a, b) =>
+    compareDesc(new Date(a.updated_at), new Date(b.updated_at)),
+  );
 
   return (
     <div className="py-10">
@@ -25,7 +25,7 @@ const Github = async () => {
         {repos.map((repo) => (
           <div
             key={repo.id}
-            className="group hover:bg-secondary rounded-xl border border-black p-5 shadow-[3px_3px_#000] transition-all hover:scale-105"
+            className="group hover:bg-secondary rounded-xl border border-black p-5 shadow-[3px_3px_#000] transition-all hover:scale-105 dark:border-transparent dark:shadow-none"
           >
             <div className="mb-2 flex items-center justify-between">
               <h2 className="text-xl font-semibold capitalize">
