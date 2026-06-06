@@ -1,7 +1,8 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { Blend, Menu, X } from "lucide-react";
+import { Blend, Menu, Moon, Sun, X } from "lucide-react";
+import { useTheme } from "next-themes";
 
 import { cn } from "@/lib/utils";
 
@@ -32,6 +33,11 @@ export const Navbar: React.FC<NavbarProps> = ({
   githubRef,
 }) => {
   const [isOpen, setIsOpen] = useState(false);
+  const { resolvedTheme, setTheme } = useTheme();
+
+  const toggleTheme = () => {
+    setTheme(resolvedTheme === "dark" ? "light" : "dark");
+  };
 
   useEffect(() => {
     document.body.style.overflow = isOpen ? "hidden" : "";
@@ -93,6 +99,17 @@ export const Navbar: React.FC<NavbarProps> = ({
                 {item.label}
               </button>
             ))}
+            <button
+              onClick={toggleTheme}
+              className="hover:bg-secondary rounded-md p-1.5 transition-colors"
+              aria-label="Toggle theme"
+            >
+              {resolvedTheme === "dark" ? (
+                <Sun size={16} />
+              ) : (
+                <Moon size={16} />
+              )}
+            </button>
           </div>
         </div>
 
@@ -105,13 +122,26 @@ export const Navbar: React.FC<NavbarProps> = ({
           )}
         >
           <Blend size={22} />
-          <button
-            onClick={() => setIsOpen(!isOpen)}
-            className="hover:bg-secondary rounded-md p-1.5 transition-colors"
-            aria-label="Toggle menu"
-          >
-            {isOpen ? <X size={22} /> : <Menu size={22} />}
-          </button>
+          <div className="flex items-center gap-1">
+            <button
+              onClick={toggleTheme}
+              className="hover:bg-secondary rounded-md p-1.5 transition-colors"
+              aria-label="Toggle theme"
+            >
+              {resolvedTheme === "dark" ? (
+                <Sun size={20} />
+              ) : (
+                <Moon size={20} />
+              )}
+            </button>
+            <button
+              onClick={() => setIsOpen(!isOpen)}
+              className="hover:bg-secondary rounded-md p-1.5 transition-colors"
+              aria-label="Toggle menu"
+            >
+              {isOpen ? <X size={22} /> : <Menu size={22} />}
+            </button>
+          </div>
         </div>
       </nav>
     </>
