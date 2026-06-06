@@ -39,21 +39,21 @@ export const GitHubSection: React.FC<GitHubSectionProps> = ({
 
       <div className="mt-10 space-y-4">
         <div className="grid grid-cols-2 gap-4 md:grid-cols-3">
-          <div className="bg-secondary/60 hover:bg-secondary rounded-xl border border-black p-3 shadow-[3px_3px_#000] transition-all hover:scale-105">
+          <div className="bg-secondary/60 hover:bg-secondary rounded-xl border border-black p-3 shadow-[3px_3px_#000] transition-all hover:scale-105 dark:border-transparent dark:shadow-none">
             <div className="text-muted-foreground flex items-center gap-2 text-sm">
               <FaGithub className="size-4" />
               Repositories
             </div>
             <p className="mt-3 text-2xl font-bold">{originalRepos.length}</p>
           </div>
-          <div className="bg-secondary/60 hover:bg-secondary rounded-xl border border-black p-3 shadow-[3px_3px_#000] transition-all hover:scale-105">
+          <div className="bg-secondary/60 hover:bg-secondary rounded-xl border border-black p-3 shadow-[3px_3px_#000] transition-all hover:scale-105 dark:border-transparent dark:shadow-none">
             <div className="text-muted-foreground flex items-center gap-2 text-sm">
               <FaStar className="size-4" />
               Total stars
             </div>
             <p className="mt-3 text-2xl font-bold">{totalStars}</p>
           </div>
-          <div className="bg-secondary/60 hover:bg-secondary col-span-2 rounded-xl border border-black p-3 shadow-[3px_3px_#000] transition-all hover:scale-105 md:col-span-1">
+          <div className="bg-secondary/60 hover:bg-secondary col-span-2 rounded-xl border border-black p-3 shadow-[3px_3px_#000] transition-all hover:scale-105 md:col-span-1 dark:border-transparent dark:shadow-none">
             <div className="text-muted-foreground flex items-center gap-2 text-sm">
               <FaCode className="size-4" />
               Top language
@@ -62,7 +62,7 @@ export const GitHubSection: React.FC<GitHubSectionProps> = ({
           </div>
         </div>
 
-        <div className="bg-secondary/40 hover:bg-secondary rounded-2xl border border-black p-4 shadow-[3px_3px_#000] transition-all hover:scale-105">
+        <div className="bg-secondary/40 hover:bg-secondary rounded-2xl border border-black p-4 shadow-[3px_3px_#000] transition-all hover:scale-105 dark:border-transparent dark:shadow-none">
           <div className="flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
             <div>
               <h2 className="text-lg font-semibold">Contributions</h2>

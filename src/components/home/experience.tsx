@@ -15,7 +15,7 @@ export const Experience: React.FC<ExperienceProps> = ({ forwardedRef }) => {
         {experienceData.map((item) => (
           <div
             key={item.id}
-            className="hover:bg-secondary rounded-xl border border-black p-3 shadow-[3px_3px_#000] transition-all hover:scale-105"
+            className="hover:bg-secondary rounded-xl border border-black p-3 shadow-[3px_3px_#000] transition-all hover:scale-105 dark:border-transparent dark:shadow-none"
           >
             <div className="flex gap-4">
               <div className="h-12 w-12 flex-shrink-0 overflow-hidden rounded-lg">
@@ -32,18 +32,18 @@ export const Experience: React.FC<ExperienceProps> = ({ forwardedRef }) => {
               <div className="flex-1">
                 <h2 className="text-base font-semibold">{item.position}</h2>
 
-                <p className="text-sm text-neutral-700">
+                <p className="text-muted-foreground text-sm">
                   {item.company} · {item.type}
                 </p>
 
-                <p className="mt-1 text-xs text-neutral-500">
+                <p className="text-muted-foreground mt-1 text-xs">
                   {item.duration} · {item.location}
                 </p>
               </div>
             </div>
 
             {item.responsibilities.length > 0 && (
-              <ul className="mt-4 ml-16 list-disc space-y-2 text-sm text-neutral-800">
+              <ul className="text-foreground mt-4 ml-16 list-disc space-y-2 text-sm">
                 {item.responsibilities.map((responsibility, idx) => (
                   <li key={idx}>{responsibility}</li>
                 ))}

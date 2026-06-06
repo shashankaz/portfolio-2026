@@ -16,7 +16,7 @@ export const Projects: React.FC<ProjectsProps> = ({ forwardedRef }) => {
         {projectsData.map((item, index) => (
           <div
             key={index}
-            className="group hover:bg-secondary rounded-xl border border-black p-4 shadow-[3px_3px_#000] transition-all hover:scale-105"
+            className="group hover:bg-secondary rounded-xl border border-black p-4 shadow-[3px_3px_#000] transition-all hover:scale-105 dark:border-transparent dark:shadow-none"
           >
             <div className="mb-2 flex items-center justify-between">
               <h2 className="text-xl font-semibold">{item.title}</h2>
@@ -35,7 +35,7 @@ export const Projects: React.FC<ProjectsProps> = ({ forwardedRef }) => {
               <p className="text-muted-foreground text-sm capitalize italic">
                 {item.languages.join(", ")}
               </p>
-              <p className="text-right text-sm text-neutral-500 italic">
+              <p className="text-muted-foreground text-right text-sm italic">
                 {item.date}
               </p>
             </div>

@@ -15,7 +15,7 @@ export const Education: React.FC<EducationProps> = ({ forwardedRef }) => {
         {educationData.map((item) => (
           <div
             key={item.id}
-            className="hover:bg-secondary flex items-start gap-3 rounded-xl border border-black p-3 shadow-[3px_3px_#000] transition-all hover:scale-105"
+            className="hover:bg-secondary flex items-start gap-3 rounded-xl border border-black p-3 shadow-[3px_3px_#000] transition-all hover:scale-105 dark:border-transparent dark:shadow-none"
           >
             <div className="aspect-square min-w-12 shrink-0 rounded-lg">
               <Image
@@ -30,7 +30,9 @@ export const Education: React.FC<EducationProps> = ({ forwardedRef }) => {
             <div className="min-w-0">
               <h2 className="leading-snug font-semibold">{item.institute}</h2>
               <p className="text-sm">{item.degree}</p>
-              <p className="mt-0.5 text-xs text-neutral-500">{item.year}</p>
+              <p className="text-muted-foreground mt-0.5 text-xs">
+                {item.year}
+              </p>
             </div>
           </div>
         ))}
