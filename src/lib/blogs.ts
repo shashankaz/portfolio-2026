@@ -1,58 +1,61 @@
 import fs from "fs";
 import path from "path";
+import { compareDesc } from "date-fns";
 import matter from "gray-matter";
 import { remark } from "remark";
+import remarkGfm from "remark-gfm";
 import html from "remark-html";
 
 const blogDirectory = path.join(process.cwd(), "blogs");
 
-export const getAllBlogSlugs = () => {
-  return fs.readdirSync(blogDirectory).map((filename) => {
-    return {
-      params: {
-        slug: filename.replace(/\.md$/, ""),
-      },
-    };
-  });
+export interface BlogMeta {
+  slug: string;
+  title: string;
+  date: string;
+  description: string;
+  sentiment: string;
+}
+
+export const getAllBlogs = (): BlogMeta[] => {
+  const files = fs.readdirSync(blogDirectory).filter((f) => f.endsWith(".md"));
+  return files
+    .map((filename) => {
+      const slug = filename.replace(/\.md$/, "");
+      const fullPath = path.join(blogDirectory, filename);
+      const { data } = matter(fs.readFileSync(fullPath, "utf8"));
+      return {
+        slug,
+        title: typeof data.title === "string" ? data.title : "Untitled",
+        date: typeof data.date === "string" ? data.date : "",
+        description:
+          typeof data.description === "string" ? data.description : "",
+        sentiment: typeof data.sentiment === "string" ? data.sentiment : "",
+      };
+    })
+    .sort((a, b) => compareDesc(new Date(a.date), new Date(b.date)));
 };
 
-export const getBlogData = (slug: string) => {
-  const fullPath = path.join(blogDirectory, `${slug}.md`);
-  const fileContents = fs.readFileSync(fullPath, "utf8");
-
-  const matterResult = matter(fileContents);
-
-  return {
-    slug,
-    ...matterResult.data,
-    content: matterResult.content,
-  };
+export const getAllBlogSlugs = () => {
+  return fs
+    .readdirSync(blogDirectory)
+    .filter((f) => f.endsWith(".md"))
+    .map((filename) => ({ slug: filename.replace(/\.md$/, "") }));
 };
 
 export const getBlogContent = async (slug: string) => {
-  const { content, ...data } = getBlogData(slug);
-  const meta = data as {
-    title?: string;
-    date?: string;
-    description?: string;
-    sentiment?: string;
-  };
-  const title = typeof meta.title === "string" ? meta.title : "Untitled";
+  const fullPath = path.join(blogDirectory, `${slug}.md`);
+  const fileContents = fs.readFileSync(fullPath, "utf8");
+  const { data, content } = matter(fileContents);
+
+  const title = typeof data.title === "string" ? data.title : "Untitled";
   const description =
-    typeof meta.description === "string" ? meta.description : "";
-  const sentiment = typeof meta.sentiment === "string" ? meta.sentiment : "";
-  const date = typeof meta.date === "string" ? meta.date : "";
+    typeof data.description === "string" ? data.description : "";
+  const sentiment = typeof data.sentiment === "string" ? data.sentiment : "";
+  const date = typeof data.date === "string" ? data.date : "";
 
-  const processedContent = await remark().use(html).process(content);
-  const contentHtml = processedContent.toString();
+  const contentHtml = (
+    await remark().use(remarkGfm).use(html).process(content)
+  ).toString();
 
-  return {
-    ...data,
-    title,
-    description,
-    sentiment,
-    date,
-    slug,
-    contentHtml,
-  };
+  return { slug, title, description, sentiment, date, contentHtml };
 };

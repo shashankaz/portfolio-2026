@@ -145,6 +145,72 @@
   --sidebar-ring: oklch(0.527 0.154 150.069);
 }
 
+@layer components {
+  .prose {
+    @apply text-foreground leading-7;
+  }
+  .prose h1 {
+    @apply mt-8 mb-3 text-2xl font-bold;
+  }
+  .prose h2 {
+    @apply mt-8 mb-3 text-xl font-bold;
+  }
+  .prose h3 {
+    @apply mt-6 mb-2 text-lg font-semibold;
+  }
+  .prose p {
+    @apply mb-4;
+  }
+  .prose a {
+    @apply underline underline-offset-4;
+  }
+  .prose ul {
+    @apply mb-4 ml-6 list-disc space-y-1;
+  }
+  .prose ol {
+    @apply mb-4 ml-6 list-decimal space-y-1;
+  }
+  .prose li {
+    @apply leading-7;
+  }
+  .prose blockquote {
+    @apply text-muted-foreground border-l-4 border-black pl-4 italic dark:border-zinc-600;
+  }
+  .prose code {
+    @apply bg-secondary rounded px-1.5 py-0.5 font-mono text-sm;
+  }
+  .prose pre {
+    @apply bg-secondary mb-4 overflow-x-auto rounded-xl border border-black p-4 dark:border-transparent;
+  }
+  .prose pre code {
+    @apply bg-transparent p-0;
+  }
+  .prose strong {
+    @apply font-bold;
+  }
+  .prose em {
+    @apply italic;
+  }
+  .prose hr {
+    @apply border-border my-8;
+  }
+  .prose table {
+    @apply w-full border-collapse text-sm mb-4;
+  }
+  .prose thead {
+    @apply border-b border-black dark:border-zinc-600;
+  }
+  .prose th {
+    @apply px-3 py-2 text-left font-semibold;
+  }
+  .prose td {
+    @apply px-3 py-2 border-b border-border;
+  }
+  .prose tr:last-child td {
+    @apply border-b-0;
+  }
+}
+
 @layer base {
   * {
     @apply border-border outline-ring/50;
